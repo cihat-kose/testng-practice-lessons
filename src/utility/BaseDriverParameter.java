@@ -1,76 +1,67 @@
 package utility;
 
-import org.openqa.selenium.*;
+import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
-import project_05_Selenium_TestNG.TestsElements;
 
 import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BaseDriverParameter {
-    public WebDriver driver;
+
+    public static final org.apache.logging.log4j.Logger logger4j2 = LogManager.getLogger();
     public static WebDriverWait wait;
+    public WebDriver driver;
 
     @BeforeClass
     @Parameters("browserType")
-    public void startingOperations(String browser) {
-
+    public void initialOperations(String browserType) {
         Logger logger = Logger.getLogger("");
-        logger.setLevel(Level.SEVERE); //
+        logger.setLevel(Level.SEVERE);
 
-        switch (browser.toLowerCase()) {
+        switch (browserType.toLowerCase()) {
             case "firefox":
-                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                 driver = new FirefoxDriver();
                 break;
+
+            case "safari":
+                driver = new SafariDriver();
+                break;
+
             case "edge":
                 driver = new EdgeDriver();
                 break;
+
             default:
-                System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                 driver = new ChromeDriver();
-                break;
         }
 
-        driver.manage().window().maximize();
-
-        Duration duration = Duration.ofSeconds(30);
-        driver.manage().timeouts().pageLoadTimeout(duration);
-
-        driver.manage().timeouts().implicitlyWait(duration);
-
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-
-        loginTest();
-    }
-
-    void loginTest() {
-
-        driver.get("https://admin-demo.nopcommerce.com/login?");
-
-        TestsElements te = new TestsElements(driver);
-
-        te.eMail.clear();
-        te.eMail.sendKeys("admin@yourstore.com");
-
-        te.password.clear();
-        te.password.sendKeys("admin");
-
-        te.loginButton.click();
-
-        Assert.assertTrue(te.logoutLink.isDisplayed());
+        driver.manage().window().maximize(); // It maximizes the screen.
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 30 sec delay: time to load the page
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));  // 30 sec delay: time to find the element
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @AfterClass
-    public void endingOperations() {
+    public void finishingOperations() {
         Tools.wait(5);
         driver.quit();
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        logger4j2.info("Test Method has started.");
+    }
+
+    @AfterMethod
+    public void afterMethod(ITestResult result) {
+        logger4j2.info(result.getName() + " test method has finished. --> " + (result.getStatus() == 1 ? "Passed" : "Failed"));
     }
 }

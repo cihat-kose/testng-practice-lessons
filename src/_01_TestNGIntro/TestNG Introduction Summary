@@ -1,0 +1,20 @@
+
+Konu: TestNG Introduction
+
+Summary:
+
+TestNG, Java ile yazılım testi yapmamızı sağlayan açık kaynaklı bir test otomasyon framework'üdür.
+TestNG (Test Next Generation),
+JUnit ve NUnit gibi diğer test framework'lerinin eksikliklerini gidermek amacıyla geliştirilmiştir.
+
+TestNG'nin öne çıkan özellikleri:
+1. Annotation (Yapı Etiketleri) desteği ile test yönetimi.
+2. Paralel test çalıştırma imkanı.
+3. İstisna yönetimi (exception handling) ve test yöntemlerinin sıralanabilir olması.
+4. XML ile test senaryolarının yapılandırılması (testng.xml).
+5. Test gruplama ve bağımlı test yöntemlerini kolayca yönetme.
+6. Zengin raporlama desteği.
+
+TestNG, JUnit'ten farklı olarak daha esnek ve geniş özellikler sunar.
+Özellikle büyük projelerde, çok sayıda test yöntemini gruplandırma, paralel test yürütme
+ve test sonuçlarını zengin bir biçimde raporlama açısından büyük avantaj sağlar.
