@@ -1,0 +1,50 @@
+
+Konu: TestNG Dependency (Bağlılıklar)
+
+Summary:
+
+- TestNG Dependency, testler arasında bir sıralama ve bağlılık ilişkisi kurmak için kullanılır.
+  Bir testin başarısına veya başarısızlığına bağlı olarak diğer testlerin yürütülmesini kontrol eder.
+- Bir testin diğer bir teste bağlı olduğunu belirlemek için dependsOnMethods veya dependsOnGroups kullanılır.
+- Bu özellik, büyük test senaryoları oluştururken ve belirli test adımlarını birbirine bağlarken kullanışlıdır.
+
+Temel Kullanım:
+
+- dependsOnMethods: Bir test metodunun bir veya daha fazla metoda bağımlı olmasını sağlar.
+  Bağımlı olunan test başarısız olursa, bu test çalıştırılmaz.
+
+  Örnek kullanım:
+  @Test
+  public void loginTest() {
+      // Login işlemini simüle eder
+      System.out.println("Login başarılı.");
+  }
+
+  @Test(dependsOnMethods = "loginTest")
+  public void editAccountTest() {
+      // Login testi başarılıysa hesap düzenleme işlemini gerçekleştirir
+      System.out.println("Hesap düzenleme işlemi.");
+  }
+
+- dependsOnGroups: Bir test metodunun belirli bir test grubuna bağımlı olmasını sağlar.
+                   Gruba ait herhangi bir test başarısız olursa, bu test çalıştırılmaz.
+
+  Örnek kullanım:
+  @Test(groups = "login")
+  public void loginTest() {
+      System.out.println("Login testi.");
+  }
+
+  @Test(dependsOnGroups = "login")
+  public void editAccountTest() {
+      System.out.println("Hesap düzenleme testi.");
+  }
+
+Dependency'nin Çalışma Mantığı:
+- Eğer bağımlı olunan bir test başarısız olursa, o teste bağımlı olan diğer testler IGNORE durumu alır ve çalıştırılmaz.
+- Bu, bir test adımının başarısız olması durumunda takip eden adımların gereksiz yere çalıştırılmasını önlemek için faydalıdır.
+
+Real-World Senaryolar:
+- Örneğin, bir e-ticaret sitesi testinde önce login adımı çalıştırılır.
+  Bu adım başarılı olursa kullanıcı hesabı üzerinde işlemler yapılabilir,
+  bu adımlar arasında bir bağımlılık ilişkisi kurmak mantıklıdır.
