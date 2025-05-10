@@ -1,4 +1,4 @@
-package _06_Dependency.groupDependency;
+package _06_Dependency.methodDependency;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
