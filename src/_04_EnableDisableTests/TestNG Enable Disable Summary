@@ -1,0 +1,23 @@
+
+Konu: TestNG Enable/Disable Annotations
+
+Summary:
+
+TestNG'de test metotlarının çalıştırılmasını kontrol etmek için `enabled` ve `@Ignore` gibi annotation'lar kullanılır.
+Bu parametreler ve annotation'lar, bir testi devre dışı bırakmak veya etkinleştirmek için kullanılır.
+
+1. @Test(enabled = true / false):
+   - Varsayılan olarak her test metodu `enabled = true` olduğu için çalıştırılır.
+   - Eğer bir testi geçici olarak devre dışı bırakmak istiyorsanız, `enabled = false` kullanabilirsiniz.
+   - Devre dışı bırakılan testler çalıştırılmaz ve test raporlarında "skip" edilmiş olarak görünebilir.
+
+2. @Ignore (TestNG):
+   - TestNG kütüphanesi içinde yer alan bir anotasyondur.
+   - `@Ignore` ile işaretlenen testler çalıştırılmaz.
+   - `enabled = false` ile işlevsel olarak aynı amacı taşır.
+   - Daha okunaklı ve kısa bir yapı sağladığı için bazı durumlarda tercih edilebilir.
+
+Not: Bu iki yöntemi geniş test senaryolarında geçici olarak testleri devre dışı bırakmanız gerektiğinde
+veya henüz tamamlanmamış testleri yönetirken kullanabilirsiniz.
+
+
