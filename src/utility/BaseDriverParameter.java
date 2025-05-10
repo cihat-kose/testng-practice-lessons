@@ -1,6 +1,7 @@
 package utility;
 
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -11,20 +12,16 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.time.Duration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class BaseDriverParameter {
 
-    public static final org.apache.logging.log4j.Logger logger4j2 = LogManager.getLogger();
+    public static final Logger logger4j2 = LogManager.getLogger();
     public static WebDriverWait wait;
     public WebDriver driver;
 
     @BeforeClass
     @Parameters("browserType")
     public void initialOperations(String browserType) {
-        Logger logger = Logger.getLogger("");
-        logger.setLevel(Level.SEVERE);
 
         switch (browserType.toLowerCase()) {
             case "firefox":

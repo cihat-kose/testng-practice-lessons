@@ -1,6 +1,7 @@
 package utility;
 
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,11 +12,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class BaseDriver {
-    public static final org.apache.logging.log4j.Logger logger4j2 = LogManager.getLogger();
+    public static final Logger logger4j2 = LogManager.getLogger();
     public static WebDriver driver; // SingletonDriver method
     public static WebDriverWait wait;
 
@@ -32,13 +32,6 @@ public class BaseDriver {
 
     @BeforeClass
     public void initialOperations() {  // The condition of this is that it is extends and takes place in the first place.
-        Logger logger = Logger.getLogger(""); // Get output logs.
-        logger.setLevel(Level.SEVERE);              // Show only ERRORs
-        /**
-         Logger nesnesi oluşturularak loglar alınır ve
-         sadece HATA (ERROR) seviyesindeki loglar görüntülenir.
-         */
-
         driver = new ChromeDriver();
         // ChromeDriver nesnesi oluşturulur ve driver değişkenine atanır.
 
