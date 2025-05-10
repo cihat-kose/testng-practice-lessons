@@ -1,0 +1,46 @@
+
+Konu: TestNG Annotations
+
+Summary:
+
+TestNG framework'ünde testler çeşitli annotations (yani, notlar) ile yönetilir.
+Bu anotasyonlar, test metodlarının ne zaman çalıştırılacağını ve nasıl bir sıraya konulacağını belirler.
+İşte TestNG'de kullanılan önemli annotationlar:
+
+1. @BeforeSuite:
+   - Test çalıştırılmadan önce bir kez çalıştırılır.
+     Tüm testler başlamadan önce yapılması gereken işlemleri burada tanımlayabilirsiniz.
+
+2. @BeforeTest:
+   - Belirtilen testlerden önce çalışır. Genellikle bir test grubunun başında çalıştırılır.
+
+3. @BeforeGroups:
+   - Belirli bir grup test çalıştırılmadan önce çalıştırılır.
+
+4. @BeforeClass:
+   - Her sınıfın çalıştırılmasından önce bir kez çalışır. Aynı sınıftaki tüm testlerden önce bir kez çalışır.
+
+5. @BeforeMethod:
+   - Her test metodundan önce çalıştırılır. Genellikle testten önce yapılması gereken setup işlemleri burada yer alır.
+
+6. @Test:
+   - Test metodlarını belirtir. TestNG bu annotasyonu taşıyan metodları test olarak algılar ve çalıştırır.
+
+7. @AfterMethod:
+   - Her test metodundan sonra çalıştırılır. Cleanup (temizlik) işlemleri genellikle burada yapılır.
+
+8. @AfterClass:
+   - Sınıftaki tüm testler bittikten sonra bir kez çalışır.
+
+9. @AfterGroups:
+   - Belirli bir grup test bittikten sonra çalıştırılır.
+
+10. @AfterTest:
+    - Belirtilen testlerden sonra çalıştırılır. Bir test grubunun sonlandırılmasında kullanılır.
+
+11. @AfterSuite:
+    - Tüm testler bittikten sonra bir kez çalıştırılır.
+      Genellikle tüm testler tamamlandıktan sonra yapılması gereken işlemler buraya yazılır.
+
+Bu annotationlar, test metodlarının belirli bir sıralama ile çalıştırılmasını sağlar.
+TestNG, bu annotationlar ile testler arasında bağımlılık ve sıralama yönetimi yapmayı kolaylaştırır.
