@@ -1,0 +1,22 @@
+
+Konu: TestNG Priority-Sorting
+
+Summary:
+
+TestNG, test metotlarının çalışma sırasını önceliklendirme imkanı sunar.
+@Test(priority = x) annotasyonu kullanılarak metotlara öncelik (priority) atanabilir.
+Atanmayan metotlar alfabetik sıraya göre ve öncelik atanmış metotlardan önce çalıştırılır.
+
+1. Priority Atanmamış Metotlar:
+   - Priority belirtilmeyen metotlar,
+     TestNG tarafından alfabetik sıraya göre ve öncelik atanmış metotlardan önce çalıştırılır.
+
+2. Priority Atanmış Metotlar:
+   - Priority değeri atanmış metotlar, atanmış olan öncelik değerlerine göre sıralanır ve çalıştırılır.
+     Küçük olan öncelik değeri olan metot, büyük olan öncelik değeri olan metottan önce çalıştırılır.
+
+Bu özellik, test senaryolarınızı belirli bir sıra ile çalıştırmak istediğinizde veya
+bağımlı testlerin doğru sırada çalışmasını sağlamak istediğinizde oldukça faydalıdır.
+
+
+
