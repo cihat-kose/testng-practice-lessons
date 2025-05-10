@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Ecommerce Test Suite">
+    <!-- Ortak parametre: password -->
+    <parameter name="password" value="TestPassword123"/>
+
+    <!-- Register Test için ek parametreler -->
+    <test name="Ecommerce Register Test">
+        <parameter name="firstName" value="Kerem"/>
+        <parameter name="lastName" value="Mert"/>
+        <parameter name="telephone" value="15551234567"/>
+        <classes>
+            <class name="_07_XMLConfigurations.eCommerceTest.EcommerceRegisterTest"/>
+        </classes>
+    </test>
+
+    <!-- Login Test -->
+    <test name="Ecommerce Login Test">
+        <!-- Email dinamik olarak EcommerceRegisterTest'ten alınacak -->
+        <classes>
+            <class name="_07_XMLConfigurations.eCommerceTest.EcommerceLoginTest"/>
+        </classes>
+    </test>
+</suite>
+
+

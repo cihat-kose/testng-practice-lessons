@@ -1,4 +1,4 @@
-package _07_XMLConfigurations;
+package _07_XMLConfigurations.duckduckgoTest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

@@ -6,7 +6,7 @@
         <parameter name="searchTerm" value="TestNG XML Configuration"/>
 
         <classes>
-            <class name="_07_XMLConfigurations.DuckDuckGoSearchTest">
+            <class name="_07_XMLConfigurations.duckduckgoTest.DuckDuckGoSearchTest">
                 <methods>
                     <include name="duckDuckGoSearch"/>
                 </methods>
