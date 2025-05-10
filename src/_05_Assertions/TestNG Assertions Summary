@@ -1,0 +1,39 @@
+
+Konu: TestNG Assertions
+
+Summary:
+
+TestNG Assertions, testlerin başarılı olup olmadığını doğrulamak için kullanılır.
+Assertions, bir testin sonucunu doğrulamak için önemli bir araçtır.
+Eğer bir assertion başarısız olursa, test durur ve hata mesajı verir.
+
+TestNG’de kullanılan iki tür assertion vardır:
+
+Hard Assert ve Soft Assert.
+
+1. Hard Assert:
+   - Testi anında durdurur, assertion başarısız olursa sonraki kod satırlarına geçmez.
+   - TestNG'nin Assert sınıfında yer alır.
+   - Örneğin: Assert.assertEquals(actual, expected);
+
+2. Soft Assert:
+   - Assertion başarısız olsa bile, testin diğer adımlarını çalıştırır.
+   - Birden fazla assertion kontrol etmek isteniyorsa kullanılır.
+   - TestNG'nin SoftAssert sınıfında yer alır.
+   - Örneğin: softAssert.assertEquals(actual, expected);
+
+TestNG'de Sık Kullanılan Assertionlar:
+
+- Assert.assertEquals(): İki değerin eşit olup olmadığını kontrol eder.
+- Assert.assertNotEquals(): İki değerin eşit olmadığını doğrular.
+- Assert.assertTrue(): Verilen koşulun doğru olup olmadığını kontrol eder.
+- Assert.assertFalse(): Verilen koşulun yanlış olup olmadığını kontrol eder.
+- Assert.assertNull(): Verilen değerin null olup olmadığını kontrol eder.
+- Assert.assertNotNull(): Verilen değerin null olmadığını kontrol eder.
+
+SoftAssert Kullanımı:
+SoftAssert ile tüm assertionlar test bitimine kadar yürütülür ve ardından sonuçlar raporlanır.
+Soft assertleri toplu olarak değerlendirmek için assertAll() metodu çağrılmalıdır.
+
+Kısacası, assertionlar testlerin doğruluğunu garanti altına almak için kullanılır.
+Hard Assert test başarısız olduğunda testi durdururken, Soft Assert testin devam etmesine izin verir.
