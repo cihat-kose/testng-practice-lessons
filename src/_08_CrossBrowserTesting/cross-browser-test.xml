@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Cross Browser Test Suite" parallel="tests" thread-count="2">
+    <test name="Cross Browser Test - Chrome">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="_08_CrossBrowserTesting.CrossBrowserTest">
+                <methods>
+                    <include name="crossBrowserTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Browser Test - Firefox">
+        <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="_08_CrossBrowserTesting.CrossBrowserTest"/>
+        </classes>
+    </test>
+
+<!--    <test name="Cross Browser Test - Edge">-->
+<!--        <parameter name="browserType" value="edge"/>-->
+<!--        <classes>-->
+<!--            <class name="_08_CrossBrowserTesting.CrossBrowserTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
