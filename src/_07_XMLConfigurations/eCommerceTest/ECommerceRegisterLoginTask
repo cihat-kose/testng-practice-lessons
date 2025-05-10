@@ -1,0 +1,32 @@
+
+Tasks:
+XML Parametreleri ile E-ticaret Giriş ve Kayıt Testleri
+
+Scenario 1: E-ticaret Kayıt Testi
+
+1. Anasayfaya gidin: http://tutorialsninja.com/demo/
+2. "My Account" menüsüne tıklayın ve "Register" bağlantısına tıklayın.
+3. Kayıt formunda gerekli alanları doldurun:
+   - First Name, Last Name, Telephone gibi alanlar XML'den parametre olarak alınacak.
+4. Email alanı dinamik olarak oluşturulacaktır ve Password XML'den parametre olarak alınacaktır.
+5. "Privacy Policy" kutucuğunu işaretleyin ve "Continue" butonuna tıklayın.
+6. Kayıt işleminin başarılı olduğunu doğrulayın: Sayfada "Your Account Has Been Created!" mesajını görmelisiniz.
+7. "Logout" yaparak oturumu kapatın.
+
+Parametreler:
+- firstName: Kayıt formunda kullanıcının ismi (XML'den alınacak).
+- lastName: Kayıt formunda kullanıcının soyismi (XML'den alınacak).
+- telephone: Kayıt formunda kullanıcının telefon numarası (XML'den alınacak).
+- password: Kayıt formunda kullanıcının şifresi (XML'den alınacak).
+
+
+Scenario 2: E-ticaret Giriş Testi
+
+1. Anasayfaya gidin ve "My Account" menüsüne tıklayıp "Login" bağlantısına tıklayın.
+2. Email ve Password alanlarını doldurun:
+   - Email: RegisterTest sınıfında dinamik olarak oluşturulan email kullanılacak.
+   - Password: XML'den parametre olarak alınacak (TestPassword123).
+3. Giriş işleminin başarılı olduğunu doğrulayın: Sayfada "Logout" bağlantısının göründüğünü kontrol edin.
+
+Parametreler:
+- password: Giriş formunda kullanılacak şifre (XML'den alınacak).
