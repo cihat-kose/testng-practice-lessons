@@ -1,5 +1,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
+<!--
+    Tarayıcılar Arası Test Paketi (Cross Browser Test Suite)
+
+    Açıklama:
+    Bu test paketi, aynı test sınıfını (CrossBrowserTest) birden fazla tarayıcıda
+    (Chrome ve Firefox) paralel olarak çalıştırmak üzere yapılandırılmıştır.
+
+    parallel="tests" → TestNG her <test> bloğunu ayrı bir iş parçacığında (thread) çalıştırır.
+    thread-count="2" → Aynı anda maksimum 2 test (yani 2 farklı tarayıcı) çalışabilir.
+
+    Her <test> içinde tanımlanan "browserType" parametresi, BaseDriverParameter sınıfında
+    kullanılarak ilgili WebDriver’ın başlatılmasını sağlar (örneğin ChromeDriver, FirefoxDriver).
+
+    Edge için olan test bloğu şimdilik yorum satırı (comment) içine alınmıştır.
+-->
+
 <suite name="Cross Browser Test Suite" parallel="tests" thread-count="2">
     <test name="Cross Browser Test - Chrome">
         <parameter name="browserType" value="chrome"/>
@@ -19,10 +35,12 @@
         </classes>
     </test>
 
-<!--    <test name="Cross Browser Test - Edge">-->
-<!--        <parameter name="browserType" value="edge"/>-->
-<!--        <classes>-->
-<!--            <class name="_08_CrossBrowserTesting.CrossBrowserTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--
+    <test name="Cross Browser Test - Edge">
+        <parameter name="browserType" value="edge"/>
+        <classes>
+            <class name="_08_CrossBrowserTesting.CrossBrowserTest"/>
+        </classes>
+    </test>
+    -->
 </suite>
