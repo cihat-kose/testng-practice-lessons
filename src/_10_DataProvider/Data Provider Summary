@@ -1,0 +1,42 @@
+
+Konu: Data Providers ile Testler
+
+Summary:
+
+TestNG'de "Data Provider", aynı testi birden fazla veri kümesi ile çalıştırmak için kullanılır.
+Bu özellik, aynı test metodunun farklı veri setleri ile tekrar tekrar çalıştırılmasını sağlar.
+Parametreli testlerin aksine, Data Providers ile her test çalışmasında dinamik olarak farklı veri kümesi kullanılabilir.
+
+Data Provider:
+- `@DataProvider` anotasyonu ile tanımlanır.
+- Farklı veri kümeleri sağlayarak aynı testi tekrar tekrar çalıştırır.
+- Her bir veri kümesi, bir test metoduna parametre olarak iletilir.
+- Test metodu, `@Test(dataProvider = "dataProviderName")` ile Data Provider'a bağlanır.
+
+Kullanımı:
+
+1. @DataProvider ile birden fazla veri kümesi tanımlanır:
+
+@DataProvider(name = "loginCredentials")
+public Object[][] loginCredentials() {
+    return new Object[][] {
+        {"user1@example.com", "password1"},
+        {"user2@example.com", "password2"},
+        {"user3@example.com", "password3"}
+    };
+}
+
+2. @Test(dataProvider = "loginCredentials") ile veri sağlayıcısı belirtilir ve her veri seti ile test tekrar çalıştırılır:
+
+@Test(dataProvider = "loginCredentials")
+public void loginTest(String username, String password) {
+    // Login işlemi yapılır
+    System.out.println("Login Test for: " + username);
+}
+
+Bu örnek, aynı login testinin farklı kullanıcı adı ve şifrelerle nasıl çalıştırıldığını gösterir.
+
+Kısacası, Data Providers, testlerin veri tabanlı senaryolarla çalıştırılmasını sağlar
+ve testlerin farklı veri kümeleriyle tekrarlanmasını kolaylaştırır.
+Parametrelerden farklı olarak, test verisi dinamik ve esnek bir şekilde sağlanır.
+
