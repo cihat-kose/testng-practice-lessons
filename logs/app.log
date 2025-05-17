@@ -1,0 +1,8 @@
+2025-05-17 18:32:02.238 INFO  Test başladı: logTest()
+2025-05-17 18:32:02.243 INFO  Test başarılı: Sonuç = 8
+2025-05-17 18:32:02.244 INFO  Test bitti: logTest()
+2025-05-17 18:34:34.504 INFO  Test method has started.
+2025-05-17 18:34:34.526 INFO  Test başladı: logTest()
+2025-05-17 18:34:34.529 INFO  Test başarılı: Sonuç = 8
+2025-05-17 18:34:34.530 INFO  Test bitti: logTest()
+2025-05-17 18:34:34.544 INFO  logTest test method has finished. -->Passed
