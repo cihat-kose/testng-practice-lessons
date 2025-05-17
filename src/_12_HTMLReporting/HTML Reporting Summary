@@ -1,0 +1,27 @@
+
+Konu: HTML Reporting
+
+Summary:
+
+TestNG, test sonuçlarını bir HTML formatında raporlayabilme özelliğine sahiptir.
+Bu raporlar, hangi testlerin başarılı, hangi testlerin başarısız olduğunu ve hata mesajlarını içeren detaylı bilgileri sunar.
+
+TestNG'nin varsayılan raporlama mekanizması, otomatik olarak çalıştırılan testlerden sonra HTML raporları oluşturur.
+Bu raporlar, `test-output` dizini içinde bulunur ve `index.html` dosyası üzerinden görüntülenebilir.
+
+Özel raporlar oluşturmak için `ITestListener` arayüzü de kullanılabilir.
+Bu arayüz, testlerin başlaması, başarılı veya başarısız olması gibi olayları yakalamaya olanak tanır
+ve kullanıcıya özelleştirilmiş HTML raporları oluşturmada esneklik sağlar.
+
+- Varsayılan HTML Raporu:
+  - TestNG otomatik olarak `test-output` klasörü altında `index.html` dosyasını oluşturur. Bu raporda:
+    - Testlerin adı ve sonuçları (PASSED, FAILED, SKIPPED)
+    - Hata mesajları ve yığın izleri (stack trace)
+    - Testlerin çalıştırılma süresi
+
+- Özelleştirilmiş Raporlar:
+  - `ITestListener` arayüzü kullanılarak raporlar özelleştirilebilir.
+  - Bu arayüz ile testin durumu hakkında bilgi almak ve raporu özelleştirmek mümkündür.
+
+Kısacası, HTML raporları testlerin sonuçlarını görsel ve anlaşılır bir biçimde sunar.
+Varsayılan raporlar yeterli olduğu gibi, gerektiğinde özelleştirilebilir raporlar da oluşturulabilir.
