@@ -3,7 +3,7 @@ package utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -32,7 +32,7 @@ public class BaseDriver {
 
     @BeforeClass
     public void initialOperations() {  // The condition of this is that it is extends and takes place in the first place.
-        driver = new ChromeDriver();
+        driver = new EdgeDriver();
         // ChromeDriver nesnesi oluşturulur ve driver değişkenine atanır.
 
         driver.manage().window().maximize(); // It maximizes the screen.
