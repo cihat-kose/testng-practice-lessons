@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--
+        Log4j2 yapılandırma dosyası.
+        Bu dosya, log'ların nasıl işlendiğini belirler.
+
+        Dosya ismi: log4j2.xml
+        Konum: Bu dosya, proje dizininizde "src" klasörü içinde yer almalıdır.
+
+        Log seviyeleri:
+        - ALL: Tüm logları kaydeder.
+        - DEBUG: Detaylı hata ayıklama bilgileri verir.
+        - INFO: Bilgilendirme mesajları.
+        - WARN: Uyarı mesajları.
+        - ERROR: Hataları belirtir.
+        - FATAL: Ciddi hatalar.
+        - OFF: Loglama tamamen kapalı.
+    -->
+
+    <loggers>
+        <!-- Log seviyesini INFO olarak belirliyoruz.
+             INFO seviyesinde loglar hem dosyaya yazılacak hem de konsolda gösterilecektir.
+        -->
+        <Root level="INFO">
+            <!-- log'ları konsola (sistem çıktısına) yönlendirme -->
+            <AppenderRef ref="LogToConsole"/> <!-- Konsola log yazılması sağlanıyor -->
+            <!-- log'ları bir dosyaya yönlendirme -->
+            <AppenderRef ref="LogToFile"/>    <!-- Loglar bir dosyaya yazılacak -->
+        </Root>
+    </loggers>
+
+    <Appenders>
+        <!--
+            Bu bölüm, logların nereye ve nasıl yazılacağını belirtir.
+            Burada iki appender tanımlıyoruz:
+            1. Console: Konsola log yazılması (ekrana çıktı)
+            2. File: Logların dosyaya yazılması
+        -->
+
+        <!-- Konsola log yazılmasını tanımlar -->
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <!-- Konsol çıktısının formatı:
+                 %d = Tarih/Zaman
+                 %-5level = Log seviyesini gösterir (INFO, ERROR, vb.)
+                 %msg = Log mesajının kendisi
+            -->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg\n"/>
+        </Console>
+
+        <!-- Logların dosyaya yazılmasını tanımlar -->
+        <File name="LogToFile" fileName="logs/app.log">
+            <!-- Dosya çıktısının formatı (Tarih, Seviye, Mesaj): -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %msg\n"/>
+        </File>
+    </Appenders>
+</configuration>
+
+        <!--
+            Not: Log4j2 kütüphaneleri projeye dahil edilmelidir.
+            Bu yapılandırma için gerekli bağımlılıklar:
+            - org.apache.logging.log4j:log4j-api:2.20.0
+            - org.apache.logging.log4j:log4j-core:2.20.0
+
+            Bağımlılıkları Maven veya Gradle kullanarak projenize ekleyebilirsiniz.
+        -->

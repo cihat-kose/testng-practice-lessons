@@ -1,0 +1,27 @@
+
+Konu: Log4j2 ile Loglama Yapılandırması
+
+Summary:
+
+Log4j2, uygulamalarınızda loglama yapmanızı sağlayan güçlü bir loglama kütüphanesidir.
+Loglar, hem konsola hem de dosyalara yazdırılabilir. Loglama seviyeleri,
+belirli önem derecelerine göre logların nasıl yönetileceğini belirler.
+
+Log Seviyeleri:
+- ALL: Tüm seviyelerdeki logları yakalar.
+- DEBUG: Hata ayıklama amaçlı detaylı bilgi sağlar.
+- INFO: Genel bilgi mesajlarını içerir.
+- WARN: Potansiyel sorunları işaret eder.
+- ERROR: Uygulama hatalarını kaydeder.
+- FATAL: Kritik hataları işaret eder.
+- OFF: Loglamayı kapatır.
+
+Log4j2 yapılandırması genellikle bir XML dosyası ile yapılır ve bu dosyada logların nasıl ve nereye yazılacağı belirtilir.
+
+Örnek Yapılandırma:
+1. `Appenders`: Logların yazılacağı yerlerin (konsol, dosya vb.) tanımlandığı bölümdür.
+2. `Loggers`: Hangi log seviyesinde, hangi appenders ile loglama yapılacağını belirtir.
+
+Temel yapılandırma adımları:
+- Konsol ve dosyaya log yazdırmak için `Console` ve `File` appenders tanımlanır.
+- `Root` elementi, loglama seviyesini ve hangi appenders’ların kullanılacağını tanımlar.
