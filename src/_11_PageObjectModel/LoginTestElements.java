@@ -1,12 +1,16 @@
 package _11_PageObjectModel;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.BaseDriver;
 
 public class LoginTestElements {
+
+    // LoginTestElements constructor ile sayfadaki elementler initialize edilir.
+    public LoginTestElements() {
+        PageFactory.initElements(BaseDriver.driver, this);
+    }
 
     // Kullanıcı adı alanı
     @FindBy(id = "user-name")
@@ -35,9 +39,6 @@ public class LoginTestElements {
     // Hata mesajı kapatma butonu
     @FindBy(xpath = "//h3[@data-test='error']/button")
     public WebElement errorCloseButton;
-    public LoginTestElements() {
-        PageFactory.initElements(BaseDriver.driver, this);
-    }
 }
 
 /**
