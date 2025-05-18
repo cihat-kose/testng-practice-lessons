@@ -10,23 +10,23 @@ import utility.BaseDriver;
 public class LoginDataProviderTest extends BaseDriver {
 
     /**
-     * Task:
-     * Kullanıcı Login Testi (Data Provider)
-     * 1) https://www.saucedemo.com/ sitesine gidiniz.
-     * 2) Sitede yer alan geçerli ve geçersiz kullanıcı adı ile login işlemini deneyiniz.
-     * - Accepted usernames are:
-     * - standard_user
-     * - locked_out_user
-     * - problem_user
-     * - performance_glitch_user
-     * - error_user
-     * - visual_user
-     * <p>
-     * Password for all users: secret_sauce
-     * <p>
-     * 3) Geçersiz kullanıcı adı veya şifre ile giriş yapılmaya çalışıldığında hata mesajını doğrulayınız.
-     * 4) Geçerli kullanıcı adı ve şifre ile giriş yaptıktan sonra logout yapınız.
-     * 5) TestNG'deki DataProvider özelliğini kullanarak farklı kullanıcı adları ve şifrelerle bu işlemleri gerçekleştirin.
+         Task:
+         Kullanıcı Login Testi (Data Provider)
+         1) https://www.saucedemo.com/ sitesine gidiniz.
+         2) Sitede yer alan geçerli ve geçersiz kullanıcı adı ile login işlemini deneyiniz.
+         - Accepted usernames are:
+         - standard_user
+         - locked_out_user
+         - problem_user
+         - performance_glitch_user
+         - error_user
+         - visual_user
+
+         Password for all users: secret_sauce
+
+         3) Geçersiz kullanıcı adı veya şifre ile giriş yapılmaya çalışıldığında hata mesajını doğrulayınız.
+         4) Geçerli kullanıcı adı ve şifre ile giriş yaptıktan sonra logout yapınız.
+         5) TestNG'deki DataProvider özelliğini kullanarak farklı kullanıcı adları ve şifrelerle bu işlemleri gerçekleştirin.
      */
 
     @Test(dataProvider = "loginCredentials")
