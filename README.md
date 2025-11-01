@@ -35,23 +35,22 @@ git clone https://github.com/cihat-kose/testng-practice-lessons.git
 3. In the dialog, select `Git` and enter the repository URL: `https://github.com/cihat-kose/testng-practice-lessons.git`.
 4. Click `Clone`.
 
-### Adding Dependencies from Maven
-1. Open IntelliJ IDEA.
-2. Navigate to `File` > `Project Structure` > `Libraries`.
-3. Click on the `+` icon and select `From Maven`.
-4. In the dialog, search for the necessary libraries using the Maven coordinates:
-    - `org.apache.logging.log4j:log4j-api:2.20.0`
-    - `org.apache.logging.log4j:log4j-core:2.20.0`
-    - `commons-io:commons-io:2.18.0`
-    - `org.seleniumhq.selenium:selenium-java:4.32.0`
-    - `org.slf4j:slf4j-nop:2.0.17`
-    - `org.testng:testng:7.11.0`
-5. Click `OK` to add the selected libraries.
+### Building with Maven
+This repository now follows the standard Maven project layout. After cloning the
+project, let Maven download the required dependencies:
 
-For each library, you can also use a higher version if available.
+```bash
+mvn dependency:resolve
+```
+
+You can also import the project into IntelliJ IDEA or Eclipse as a Maven
+project; the IDE will automatically recognise the configuration defined in
+`pom.xml`.
 
 ## ⚙️ Usage
-Ensure that you have the necessary dependencies installed and navigate to the `src` directory to set up and execute the test cases.
+Maven downloads every dependency declared in the `pom.xml` file automatically,
+so you only need to ensure that a compatible JDK is installed (Java 11 or
+higher).
 
 ### 1. Running from XML File
 Run your tests from any TestNG XML file by following these steps:
@@ -61,7 +60,7 @@ Run your tests from any TestNG XML file by following these steps:
 Right-click on any XML file (e.g., 'cross-browser-test.xml') and select 'Run'.
 
 # To run from command line with Maven
-mvn test -DsuiteXmlFile=your-test-suite.xml
+mvn test -DsuiteXmlFile=src/test/java/_08_CrossBrowserTesting/cross-browser-test.xml
 ```
 
 ### 2. Running Test Classes Directly
@@ -91,17 +90,15 @@ mvn test
 - **Logging**: Integrated logging using Log4j2 for tracking and debugging test execution.
 
 ## 📦 Dependencies
-| Dependency          | Version | Link                                                                                                                                                                                     |
-|---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Java                | 21+     | [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)                                                                                                             |
-| TestNG              | 7.11.0  | [TestNG](https://mvnrepository.com/artifact/org.testng/testng/7.9.0)                                                                                                                     |
-| Selenium WebDriver  | 4.32.0  | [Selenium](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.25.0)                                                                                              |
-| Log4j2              | 2.20.0  | [Log4j2 API](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.20.0), [Log4j2 Core](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.20.0) |
-| Commons IO          | 2.18.0  | [Commons IO](https://mvnrepository.com/artifact/commons-io/commons-io/2.11.0)                                                                                                            |
-| SLF4J NOP           | 2.0.17  | [SLF4J NOP](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop/1.7.30)                                                                                                                |                                                                                                       |
+| Dependency | Version | Link |
+|------------|---------|------|
+| Java       | 11+     | [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) |
+| TestNG     | 7.10.2  | [TestNG](https://mvnrepository.com/artifact/org.testng/testng/7.10.2) |
+| Selenium   | 4.19.1  | [Selenium](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.19.1) |
+| Log4j2     | 2.23.1  | [Log4j2 API](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.23.1), [Log4j2 Core](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.23.1) |
 
 ## 🔧 Configuration
-Configuration details can be found in the `testng.xml` file and other relevant configuration files within the project. Log4j2 configuration is set up in the `log4j2.xml` file to provide detailed logging.
+Configuration details can be found in the `testng.xml` file and other relevant configuration files within the project. Log4j2 configuration is set up in the `src/test/resources/log4j2.xml` file to provide detailed logging.
 
 ### Log4j2 Integration
 The project uses Log4j2 for logging purposes. Ensure the necessary dependencies are included in your project and the `log4j2.xml` file is correctly configured for detailed logging. Logging is crucial for tracking and debugging test execution; `BaseDriver` utilizes Log4j2 to log test methods' start, end, and results.
