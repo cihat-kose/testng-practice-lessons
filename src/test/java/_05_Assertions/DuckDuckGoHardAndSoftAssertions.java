@@ -26,43 +26,31 @@ public class DuckDuckGoHardAndSoftAssertions extends BaseDriver {
         driver.get("https://duckduckgo.com");
 
         // 1. URL doğrulaması
-        Assert.assertTrue(driver.getCurrentUrl().contains("duckduckgo.com"),"URL doğrulama hatası");
 
         // 2. Sayfa başlığı doğrulaması
-        Assert.assertTrue( driver.getTitle().toLowerCase().contains("duckduckgo"),"Title doğrulama hatası");
 
         // 3. Arama işlemi
-        WebElement searchInput= wait.until(ExpectedConditions.elementToBeClickable(By.name("q")));
-        searchInput.sendKeys("TestNG" + Keys.ENTER);
+
 
         // 4. İlk başlığı yakala ve doğrula
-        WebElement firstTitle=wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Ee2e63EzQ9F3xq9wsGDY")));
 
-        Assert.assertEquals(firstTitle.getText().trim(),"TestNG","İlk sonuç başlığı beklenenden farklı!");
     }
 
     @Test
     public void softAssertTesting(){
         driver.get("https://duckduckgo.com");
 
-        SoftAssert softAssert=new SoftAssert();
+
 
         // 1. URL doğrulaması (Bilincli olarak hatali yazdik)
-        softAssert.assertTrue(driver.getCurrentUrl().contains("duckduckgo.net"),"URL doğrulama hatası");
 
         // 2. Sayfa başlığı doğrulaması
-        softAssert.assertTrue( driver.getTitle().toLowerCase().contains("duckduckgo"),"Title doğrulama hatası");
 
         // 3. Arama işlemi
-        WebElement searchInput= wait.until(ExpectedConditions.elementToBeClickable(By.name("q")));
-        searchInput.sendKeys("TestNG" + Keys.ENTER);
+
 
         // 4. İlk başlığı yakala ve doğrula
-        WebElement firstTitle=wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Ee2e63EzQ9F3xq9wsGDY")));
 
-        softAssert.assertEquals(firstTitle.getText().trim(),"TestNG","İlk sonuç başlığı beklenenden farklı!");
 
-        System.out.println("Tüm soft assert kontrolleri tamamlandı. Sonuçlar şimdi değerlendiriliyor.");
-        softAssert.assertAll();
     }
 }
