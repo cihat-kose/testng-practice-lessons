@@ -92,9 +92,9 @@ mvn test
 ## 📦 Dependencies
 | Dependency | Version | Link |
 |------------|---------|------|
-| Java       | 11+     | [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) |
-| TestNG     | 7.10.2  | [TestNG](https://mvnrepository.com/artifact/org.testng/testng/7.10.2) |
-| Selenium   | 4.19.1  | [Selenium](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.19.1) |
+| Java       | 21+     | [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) |
+| TestNG     | 7.11.0  | [TestNG](https://mvnrepository.com/artifact/org.testng/testng/7.10.2) |
+| Selenium   | 4.35.0  | [Selenium](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.19.1) |
 | Log4j2     | 2.23.1  | [Log4j2 API](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.23.1), [Log4j2 Core](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.23.1) |
 
 ## 🔧 Configuration
