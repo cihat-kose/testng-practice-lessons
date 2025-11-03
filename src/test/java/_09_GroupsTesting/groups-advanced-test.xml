@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Advanced Group Test Suite" parallel="methods" thread-count="3">
+    <!-- Sadece sanity grubundaki testleri çalıştır -->
+    <test name="Sanity Test">
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="_09_GroupsTesting.AdvancedGroupsTest"/>
+        </classes>
+    </test>
+
+    <!-- Regression grubundaki testler çalıştırılır ve sanity grubuna bağlıdır -->
+    <test name="Regression Test">
+        <groups>
+            <run>
+                <include name="regression"/>
+                <exclude name="functional"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="_09_GroupsTesting.AdvancedGroupsTest"/>
+        </classes>
+    </test>
+
+    <!-- Functional testler -->
+    <test name="Functional Test">
+        <groups>
+            <run>
+                <include name="functional"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="_09_GroupsTesting.AdvancedGroupsTest"/>
+        </classes>
+    </test>
+
+</suite>
