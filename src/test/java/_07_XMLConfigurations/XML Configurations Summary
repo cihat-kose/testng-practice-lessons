@@ -1,0 +1,48 @@
+
+Konu: TestNG XML Configurations
+
+Summary:
+
+TestNG XML Configurations, testlerin yapılandırılmasını ve yönetilmesini sağlayan önemli bir araçtır.
+XML dosyaları, TestNG framework'ü ile birlikte kullanılarak, test suite'lerinin, testlerin ve grupların tanımlanmasını sağlar.
+
+XML dosyaları ile:
+- Farklı test suite'leri oluşturabilir.
+- Parametreler tanımlayabilir ve testlere aktarabilir.
+- Testlerin gruplar ve bağımlılıklar ile yapılandırılmasını sağlayabilirsiniz.
+
+TestNG XML ile yapılan bazı işlemler:
+
+1. Test Suite Tanımlama:
+   - Birden fazla testi bir arada çalıştırmak için XML dosyasında suite'ler tanımlanır.
+   - Örneğin:
+     <suite name="TestSuite">
+         <test name="Test1">
+             <classes>
+                 <class name="com.example.MyTestClass"/>
+             </classes>
+         </test>
+     </suite>
+
+2. Parametreler Tanımlama:
+   - XML ile dışarıdan parametreler tanımlanabilir ve bu parametreler testlere aktarılabilir.
+   - Örneğin:
+     <parameter name="browser" value="chrome"/>
+
+3. Gruplar ve Bağımlılıklar:
+   - Testler, gruplar olarak tanımlanabilir ve grup bazında çalıştırılabilir.
+   - Testler arasında bağımlılıklar kurulabilir.
+   - Örneğin:
+     <groups>
+         <run>
+             <include name="smoke"/>
+         </run>
+     </groups>
+
+4. Test Suite Parametre Geçişi:
+   - Parametreler XML ile testlere aktarılabilir ve farklı ortamlar için dinamik testler oluşturulabilir.
+   - Örneğin: Tarayıcı ve kullanıcı bilgileri gibi parametreler dinamik olarak testlere geçilir.
+
+Sonuç:
+TestNG XML Configurations, testlerin esnek bir şekilde yapılandırılmasına ve dinamik test yönetimine imkan verir.
+Test suite'leri, gruplar ve parametrelerle zenginleştirilmiş test yapıları oluşturulabilir.
