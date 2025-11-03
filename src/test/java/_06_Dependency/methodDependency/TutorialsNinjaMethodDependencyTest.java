@@ -34,9 +34,11 @@ public class TutorialsNinjaMethodDependencyTest extends BaseDriver {
      */
 
     // Random objesi
+    Random random = new Random();
 
     // Rastgele email ve şifre oluşturma
-
+    String generatedEmail = "user_" + random.nextInt(10000) + "@testmail.com";
+    String generatedPassword = "password" + random.nextInt(10000);
 
     @Test
     public void registerTest() {
