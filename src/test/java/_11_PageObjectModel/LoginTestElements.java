@@ -1,6 +1,5 @@
 package _11_PageObjectModel;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,7 +8,6 @@ import utility.BaseDriver;
 public class LoginTestElements {
 
     // LoginTestElements constructor ile sayfadaki elementler initialize edilir.
-
     public LoginTestElements() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
@@ -25,7 +23,6 @@ public class LoginTestElements {
     // Giriş butonu
     @FindBy(id = "login-button")
     public WebElement loginButton;
-
 
     // Menü butonu (Burger menü)
     @FindBy(id = "react-burger-menu-btn")

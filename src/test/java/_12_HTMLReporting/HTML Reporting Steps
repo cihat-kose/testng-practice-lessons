@@ -1,0 +1,31 @@
+// HTML Raporu Oluşturma Adımları:
+
+1. Modül Seçimi:
+   - HTML raporu oluşturmak istediğiniz modülü (test sınıfı, paket veya proje) seçin ve çalıştırın.
+
+2. Yapılandırma Ayarları:
+   - Üst menüden Run menüsüne gidin ve Edit Configuration seçeneğini tıklayın.
+
+3. Modülün Aktifliği:
+   - Açılan pencerede, sol tarafta TestNG başlığı altında çalıştırdığınız modülün aktif olduğunu kontrol edin.
+   - Eğer modül yoksa, + simgesine tıklayarak yeni bir TestNG yapılandırması ekleyin.
+     TestNG yapılandırmasında modül, sınıf veya paket gibi hedefleri seçebilirsiniz.
+
+4. Listeners Seçimi:
+   - Sağ taraftaki ayarlar bölümünden Listeners sekmesine tıklayın.
+
+5. Listener Ekleme:
+   - Listeners kısmının sağ tarafında bulunan + simgesine tıklayın ve yeni bir listener ekleyin.
+
+6. Listener Arama:
+   - Açılan pencerede, üstteki arama çubuğuna "rep" yazın.
+
+7. EmailableReporter Seçimi:
+   - Arama sonuçları arasında en üstte çıkan "EmailableReporter2 (testng)" seçeneğini seçin ve OK butonuna tıklayın.
+
+8. Ayarların Onaylanması:
+   - Listener eklendikten sonra ayarları kaydetmek için OK butonuna tıklayın.
+   - Eğer hemen rapor almak isterseniz, ayarlar tamamlandıktan sonra testi Run (Çalıştır) butonuna basarak başlatabilirsiniz.
+
+9. Testin Yeniden Çalıştırılması:
+   - Testlerinizi yeniden çalıştırın. TestNG tarafından üretilen HTML raporunun başarılı bir şekilde oluşturulduğunu kontrol edin.
