@@ -1,10 +1,15 @@
 package utility;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
@@ -12,6 +17,7 @@ import java.time.Duration;
 public class BaseDriver {
     public static WebDriver driver; // SingletonDriver method
     public static WebDriverWait wait;
+    public static final Logger logger4j2= LogManager.getLogger();
 
     @AfterClass
     public static void finishingOperations() {
@@ -65,6 +71,16 @@ public class BaseDriver {
          */
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        logger4j2.info("Test method has started");
+    }
+
+    @AfterMethod
+    public void afterMethod(ITestResult result) {
+        logger4j2.info(result.getName() + " has been executed successfully-->" + (result.getStatus() == 1 ? "Passed" : "Failed"));
     }
 }
 
