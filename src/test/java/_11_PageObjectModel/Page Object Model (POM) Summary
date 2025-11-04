@@ -1,0 +1,45 @@
+
+Konu: Page Object Model (POM)
+
+Summary:
+
+Page Object Model (POM), yazılım testlerinde kullanılan bir tasarım deseni olup,
+her web sayfası veya sayfanın belirli bölümleri için ayrı sınıflar oluşturarak testlerin
+düzenlenmesini ve bakımını kolaylaştırır. POM, testlerin daha temiz, tekrar kullanılabilir
+ve sürdürülebilir hale gelmesini sağlar.
+
+Page Object Model ile yapılan işlemler:
+
+1. Page Object (Sayfa Nesnesi) Tanımlama:
+   - Her web sayfası veya sayfanın belirli bölümleri için bir sınıf oluşturulur. Bu sınıf,
+     web öğelerini ve bu öğeler üzerinde yapılacak işlemleri içerir.
+   - Örneğin:
+     public class LoginPage {
+         @FindBy(id = "username") WebElement usernameInput;
+         @FindBy(id = "password") WebElement passwordInput;
+
+         public void setUsername(String username) {
+             usernameInput.sendKeys(username);
+         }
+     }
+
+2. Test Kodunda Sayfa Nesnelerini Kullanma:
+   - Test sınıfları, oluşturulan sayfa nesnelerini kullanarak test işlemlerini gerçekleştirir.
+     Sayfa işlemleri bu nesneler aracılığıyla yapılır.
+   - Örneğin:
+     LoginPage loginPage = new LoginPage(driver);
+     loginPage.setUsername("standard_user");
+
+3. Kodun Bakımı ve Yeniden Kullanılabilirliği:
+   - POM, her sayfanın işlemlerini merkezi bir sınıfta topladığı için, sayfa üzerinde yapılan
+     değişiklikler sadece o sınıfı etkiler. Test kodlarında herhangi bir düzenlemeye gerek kalmaz.
+   - Aynı sayfa işlemleri farklı testlerde tekrar kullanılabilir.
+
+4. Testin Temizlenmesi ve Anlaşılabilirliği:
+   - Test mantığı ve sayfa işlemleri birbirinden ayrılır, bu da kodun daha temiz ve anlaşılır
+     olmasını sağlar. Test kodu yalnızca doğrulama ve işlem adımlarına odaklanır.
+
+Sonuç:
+Page Object Model, testlerin düzenlenmesini ve bakımını kolaylaştırarak, kod tekrarını
+azaltır ve büyük projelerde daha sürdürülebilir bir test yapısı sağlar. POM sayesinde,
+sayfa işlemleri ile test mantığı ayrılır, böylece kod daha modüler hale gelir.
