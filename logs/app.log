@@ -1,0 +1,11 @@
+2025-11-04 18:28:49.987 INFO  Test method has started
+2025-11-04 18:28:50.008 INFO  Test başladı: logTest()
+2025-11-04 18:28:50.013 INFO  Test basarili = 8
+2025-11-04 18:28:50.013 INFO  Test bitti: logTest()
+2025-11-04 18:28:50.036 INFO  logTest has been executed successfully-->Passed
+2025-11-04 18:31:34.688 INFO  Test method has started
+2025-11-04 18:31:34.720 INFO  Test başladı: logTest()
+2025-11-04 18:31:34.737 DEBUG Toplama islemi yapiliyor: 5 + 3 = 8
+2025-11-04 18:31:34.739 INFO  Test basarili = 8
+2025-11-04 18:31:34.750 INFO  Test bitti: logTest()
+2025-11-04 18:31:34.781 INFO  logTest has been executed successfully--> Passed

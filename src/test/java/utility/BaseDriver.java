@@ -80,7 +80,7 @@ public class BaseDriver {
 
     @AfterMethod
     public void afterMethod(ITestResult result) {
-        logger4j2.info(result.getName() + " has been executed successfully-->" + (result.getStatus() == 1 ? "Passed" : "Failed"));
+        logger4j2.info(result.getName() + " has been executed successfully--> " + (result.getStatus() == 1 ? "Passed" : "Failed"));
     }
 }
 
